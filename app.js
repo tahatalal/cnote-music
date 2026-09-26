@@ -420,8 +420,9 @@
         return;
       }
       const inst = $('#f-inst').value, level = $('#f-level').value, m = msg.value.trim();
+      const whereEl = $('#f-where'), where = whereEl ? whereEl.value : '';
       const subject = `Lesson inquiry — ${name} (${inst})`;
-      const body = `Hi C-Note,\n\nMy name is ${name}.\nInstrument: ${inst}\nExperience: ${level}\n\n${m || 'I’d like to set up a free trial mini lesson.'}\n\nThanks!\n${name}`;
+      const body = `Hi C-Note,\n\nMy name is ${name}.\nInstrument: ${inst}\nExperience: ${level}\nWhere: ${where}\n\n${m || 'I’d like to set up a free trial mini lesson.'}\n\nThanks!\n${name}`;
       window.location.href = `mailto:cnotemusicphilly@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
       note.classList.add('ok');
       note.innerHTML = 'Your email app should open with your message ready to send. Nothing happened? Email <a href="mailto:cnotemusicphilly@gmail.com">cnotemusicphilly@gmail.com</a> or call <a href="tel:+16103043444">610-304-3444</a>.';
