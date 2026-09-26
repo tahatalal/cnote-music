@@ -350,11 +350,11 @@
       if (!v) return;
       steps.forEach((x) => x.classList.toggle('active', x === s));
       const n = s.dataset.step;
-      if (num.textContent !== '0' + n) {
+      if (num && num.textContent !== '0' + n) {
         num.textContent = '0' + n;
         num.classList.remove('flip'); void num.offsetWidth; num.classList.add('flip');
       }
-      mbar.style.width = n * 25 + '%';
+      if (mbar) mbar.style.width = n * 25 + '%';
     }, { rootMargin: '-45% 0px -45% 0px' }));
   })();
 
@@ -404,7 +404,7 @@
   }));
   const msg = $('#f-msg');
   $$('[data-claim]').forEach((a) => a.addEventListener('click', () => {
-    if (!msg.value.trim()) msg.value = 'Hi C-Note! I’d like to claim my free trial mini lesson.';
+    if (msg && !msg.value.trim()) msg.value = 'Hi C-Note! I’d like to claim my free trial mini lesson.';
   }));
   const form = $('#contactForm');
   if (form) {
@@ -420,9 +420,8 @@
         return;
       }
       const inst = $('#f-inst').value, level = $('#f-level').value, m = msg.value.trim();
-      const whereEl = $('#f-where'), where = whereEl ? whereEl.value : '';
       const subject = `Lesson inquiry — ${name} (${inst})`;
-      const body = `Hi C-Note,\n\nMy name is ${name}.\nInstrument: ${inst}\nExperience: ${level}\nWhere: ${where}\n\n${m || 'I’d like to set up a free trial mini lesson.'}\n\nThanks!\n${name}`;
+      const body = `Hi C-Note,\n\nMy name is ${name}.\nInstrument: ${inst}\nExperience: ${level}\n\n${m || 'I’d like to set up a free trial mini lesson.'}\n\nThanks!\n${name}`;
       window.location.href = `mailto:cnotemusicphilly@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
       note.classList.add('ok');
       note.innerHTML = 'Your email app should open with your message ready to send. Nothing happened? Email <a href="mailto:cnotemusicphilly@gmail.com">cnotemusicphilly@gmail.com</a> or call <a href="tel:+16103043444">610-304-3444</a>.';

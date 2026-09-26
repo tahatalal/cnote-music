@@ -145,6 +145,17 @@
 
 /* ---------- contact extras ---------- */
 .cc-small{grid-column:1/-1;font-size:16px;color:var(--cream-2)}
+.start-card{align-self:center}
+.sc-kicker{margin:0 0 10px;font-family:var(--marker);font-size:19px;color:var(--gold);transform:rotate(-1.5deg);transform-origin:left}
+.start-card h3{margin-bottom:14px}
+.sc-text{margin:0 0 26px;color:var(--cream-2);line-height:1.65}
+.sc-actions{display:grid;gap:12px}
+.sc-actions .btn{height:60px;font-size:16px;white-space:normal;text-align:center;line-height:1.2}
+.sc-actions .btn-ghost{font-size:14px;overflow-wrap:anywhere}
+.sc-note{margin:18px 0 0;font-size:14px;color:var(--muted);text-align:center}
+.credit{margin:10px 0 0;font-size:12.5px;color:var(--muted);text-align:center;letter-spacing:.02em}
+.credit a{color:var(--cream-2);border-bottom:1px solid rgba(240,180,60,.35);padding-bottom:1px;transition:color .3s,border-color .3s}
+.credit a:hover{color:var(--gold);border-color:var(--gold)}
 
 /* ---------- lightbox ---------- */
 .lightbox{max-width:min(92vw,1100px);max-height:92vh;padding:0;border:0;background:transparent;overflow:visible;color:var(--cream)}
